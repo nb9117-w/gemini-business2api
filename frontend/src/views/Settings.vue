@@ -61,12 +61,26 @@
                   class="w-full rounded-2xl border border-input bg-background px-3 py-2 text-sm"
                   placeholder="http://127.0.0.1:7890 | no_proxy=localhost,127.0.0.1"
                 />
-                <div class="rounded-2xl border border-border/60 bg-muted/30 px-3 py-2 text-xs text-muted-foreground">
-                  <p>格式示例：</p>
-                  <p class="mt-1 font-mono">http://127.0.0.1:7890</p>
-                  <p class="mt-1 font-mono">http://user:pass@127.0.0.1:7890</p>
-                  <p class="mt-1 font-mono">socks5h://127.0.0.1:7890 | no_proxy=localhost,127.0.0.1,.local</p>
-                  <p class="mt-1 font-mono">socks5h://user:pass@127.0.0.1:7890 | no_proxy=localhost,127.0.0.1,.local</p>
+                <div class="rounded-2xl border border-border/60 bg-muted/30 px-3 py-2.5 text-xs text-muted-foreground">
+                  <p class="mb-2 font-medium">格式示例：</p>
+                  <div class="space-y-1.5">
+                    <div>
+                      <p class="text-[10px] text-muted-foreground/70 mb-0.5">基础格式：</p>
+                      <p class="font-mono text-[11px] leading-relaxed">http://127.0.0.1:7890</p>
+                    </div>
+                    <div>
+                      <p class="text-[10px] text-muted-foreground/70 mb-0.5">带认证：</p>
+                      <p class="font-mono text-[11px] leading-relaxed">http://user:pass@127.0.0.1:7890</p>
+                    </div>
+                    <div>
+                      <p class="text-[10px] text-muted-foreground/70 mb-0.5">SOCKS5 + NO_PROXY：</p>
+                      <p class="font-mono text-[11px] leading-relaxed break-all">socks5h://127.0.0.1:7890 | no_proxy=localhost,127.0.0.1,.local</p>
+                    </div>
+                    <div>
+                      <p class="text-[10px] text-muted-foreground/70 mb-0.5">完整示例：</p>
+                      <p class="font-mono text-[11px] leading-relaxed break-all">socks5h://user:pass@127.0.0.1:7890 | no_proxy=localhost,127.0.0.1,.local</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -100,6 +114,9 @@
                   :options="tempMailProviderOptions"
                   class="w-full"
                 />
+                <div class="rounded-2xl border border-amber-500/20 bg-amber-500/5 px-3 py-2 text-xs text-amber-600 dark:text-amber-400">
+                  <span class="font-medium">⚠️ 提示：</span>除 DuckMail 外，其它邮箱服务未经充分测试（直接合并 PR），如遇问题请提交 Issues
+                </div>
                 <div class="flex items-center justify-between gap-2 text-xs text-muted-foreground">
                   <span>临时邮箱代理</span>
                   <HelpTip text="启用后临时邮箱请求将使用账户操作代理地址。" />
